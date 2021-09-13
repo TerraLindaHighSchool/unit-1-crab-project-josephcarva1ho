@@ -2,6 +2,7 @@ import greenfoot.*;  // (Actor, World, Greenfoot, GreenfootImage)
 
 public class CrabWorld extends World
 {
+    private GreenfootSound sound = new GreenfootSound("fly-noise.mp3");
     /**
      * Create the crab world (the beach). Our world has a size 
      * of 560x560 cells, where every cell is just 1 pixel.
@@ -9,7 +10,13 @@ public class CrabWorld extends World
     public CrabWorld() 
     {
         super(560, 560, 1);
+        playLoop();
         prepare();
+  
+    }
+    public void playLoop()
+    {
+        Greenfoot.playSound("fly-noise.mp3");
     }
     
     /**
@@ -44,5 +51,11 @@ public class CrabWorld extends World
         crab.setLocation(208,263);
         crab.setLocation(52,524);
         removeObject(lobster2);
+        ParkedCar parkedCar = new ParkedCar();
+        addObject(parkedCar,505,87);
+        ParkedCar parkedCar2 = new ParkedCar();
+        addObject(parkedCar2,47,359);
+        ParkedCar parkedCar3 = new ParkedCar();
+        addObject(parkedCar3,513,414);
     }
 }

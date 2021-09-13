@@ -24,4 +24,12 @@ public class lobster extends Actor
             turn(20);
         }
     }
+    
+    public void turnAtParkedCar( )
+    {
+        if(isTouching(ParkedCar.class))
+        {
+            turn(30);
+        }
+    }
 }
