@@ -5,7 +5,7 @@ import greenfoot.*;
  * @author: Joey Carvalho
  * @version: 8/26/21
  */
-public class Crab extends Actor
+public class Fly extends Actor
 {
     public void act()
     {
@@ -46,28 +46,28 @@ public class Crab extends Actor
     // Checks for collisions with other objects
     private void onCollision( )
     {
-        if(isTouching(Worm.class))
+        if(isTouching(Cupcake.class))
         {
-            removeTouching(Worm.class);
+            removeTouching(Cupcake.class);
             Greenfoot.playSound("slurp.wav");
             
             // Winning the game
-            if(getWorld().getObjects(Worm.class).size() == 0)
+            if(getWorld().getObjects(Cupcake.class).size() == 0)
             {
                 Greenfoot.setWorld(new WinSplash());
                 Greenfoot.playSound("fanfare.wav");
                 Greenfoot.stop();
             }
         }
-         if(isTouching(lobster.class))
+         if(isTouching(Car.class))
         {
-        Greenfoot.playSound("au.wav");
-        Greenfoot.stop();
+            Greenfoot.playSound("au.wav");
+            Greenfoot.stop();
         }
         if(isTouching(ParkedCar.class))
         {
-        Greenfoot.playSound("au.wav");
-        Greenfoot.stop();
+            Greenfoot.playSound("au.wav");
+            Greenfoot.stop();
         }
     }
 }
